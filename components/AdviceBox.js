@@ -16,7 +16,7 @@ const AdviceBox = ({ advice }) => {
     await setLoading(false)
   }
   return (
-    <div className="relative flex h-auto w-[32rem] flex-col  items-center justify-center  gap-y-8 rounded-md bg-[#313A49] py-14 px-8">
+    <div className="relative flex h-auto sm:w-[32rem] w-[22rem] flex-col  items-center justify-center  sm:gap-y-8 gap-y-6 rounded-md bg-[#313A49] py-14 sm:px-8 px-4 ">
       <Head>
         <title> {`Advice #${ad?.id}`}</title>
       </Head>

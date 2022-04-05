@@ -8,7 +8,6 @@ import {
   BsFillDice6Fill,
 } from 'react-icons/bs'
 const RandomButton = ({ randomNumber }) => {
-  console.log(randomNumber)
   const icons = [
     {
       id: 1,
