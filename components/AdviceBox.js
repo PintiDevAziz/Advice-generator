@@ -6,15 +6,17 @@ const AdviceBox = ({ advice }) => {
   const [loading, setLoading] = useState(false)
   const { slip } = advice
   const [ad, setAd] = useState(slip)
+  const [randomNumber, setRandomNumber] = useState(1)
   const newFetch = async () => {
     await setLoading(true)
     const req = await fetch('https://api.adviceslip.com/advice')
     const res = await req.json()
     await setAd(res.slip)
+    await setRandomNumber(Math.round(Math.random() * 5))
     await setLoading(false)
   }
   return (
-    <div className="relative flex h-80 w-[34rem]  flex-col items-center  justify-center gap-y-8 rounded-md bg-[#313A49] px-10">
+    <div className="relative flex h-auto w-[32rem] flex-col  items-center justify-center  gap-y-8 rounded-md bg-[#313A49] py-14 px-8">
       <Head>
         <title> {`Advice #${ad?.id}`}</title>
       </Head>
@@ -43,7 +45,7 @@ const AdviceBox = ({ advice }) => {
         }`}
         onClick={newFetch}
       >
-        <RandomButton />
+        <RandomButton randomNumber={randomNumber} />
       </div>
     </div>
   )
